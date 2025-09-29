@@ -1,0 +1,831 @@
+@font-face {
+  font-family: Lato-black;
+  src: url(/assets/fonts/Lato-Black.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Lato-bold;
+  src: url(/assets/fonts/Lato-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: Lato-thin;
+  src: url(/assets/fonts/Lato-Thin.ttf) format("truetype");
+}
+@font-face {
+  font-family: Lato-light;
+  src: url(/assets/fonts/Lato-Light.ttf) format("truetype");
+}
+@font-face {
+  font-family: Lato-regular;
+  src: url(/assets/fonts/Lato-Regular.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #4891ff;
+  --light-color: #f4f4f6;
+  --dark-color: #111;
+}
+
+body {
+  font-family: "Lato-regular";
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #071021;
+  overflow-x: hidden;
+  background-image: linear-gradient(
+      rgba(6, 10, 20, 0.62),
+      rgba(6, 10, 20, 0.62)
+    ),
+    url("/assets/images/death-stranding-main-poster.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 10, 20, 0.35);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container,
+.card,
+.navbar,
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*! Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.06); /*  glass */
+  padding: 14px 20px;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 1002;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 6px;
+  z-index: 2000;
+}
+
+.logo-sticky {
+  display: none;
+}
+
+.navbar.scrolled {
+  background: rgba(6, 10, 20, 0.6);
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.5);
+}
+
+.hamburger-button:focus {
+  outline: 2px solid rgba(72, 145, 255, 0.5);
+  border-radius: 6px;
+}
+
+.mobile-menu {
+  right: -300px;
+}
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu ul li a {
+  color: #fff;
+  display: block;
+  padding: 14px 20px;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1003;
+}
+
+.navbar .main-menu ul {
+  display: flex;
+}
+
+.navbar ul li a {
+  padding: 10px 20px;
+  display: block;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.navbar ul li a:hover {
+  color: var(--primary-color);
+}
+
+.navbar ul li a i {
+  margin-right: 10px;
+}
+
+.navbar ul li:last-child a {
+  margin-left: 10px;
+}
+
+/*! Hero */
+.hero {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.hero .container {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 15px;
+  background-image: linear-gradient(
+      rgba(6, 10, 20, 0.55),
+      rgba(6, 10, 20, 0.35)
+    ),
+    url("/assets/images/death-stranding-solo-baby.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.hero .container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 10, 20, 0.45) 0%,
+    rgba(6, 10, 20, 0.65) 100%
+  );
+  pointer-events: none;
+}
+
+.hero .hero-content {
+  width: 70%;
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero .hero-text {
+  width: 70%;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Lato-light";
+}
+
+.hero .btn {
+  box-shadow: 0 6px 18px rgba(3, 10, 30, 0.4);
+}
+
+@media (max-width: 767px) {
+  .hero .container {
+    min-height: 50vh;
+    padding: 40px 15px;
+    background-image: linear-gradient(
+        rgba(6, 10, 20, 0.6),
+        rgba(6, 10, 20, 0.45)
+      ),
+      url("/assets/images/death-stranding-dark-gang.jpg");
+    background-position: center top;
+    background-size: cover;
+  }
+
+  .hero .hero-content {
+    width: 100%;
+  }
+
+  .text-xxl {
+    font-size: 1.5rem;
+    margin: 20px 0 12px;
+  }
+}
+
+/*! Video */
+.video {
+  padding: 10px 0 40px;
+}
+
+.video .video-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video .video-preview {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  display: block;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.video-content a {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+.video-content > a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 3;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  pointer-events: none;
+}
+
+.video-content > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><polygon points='5,3 19,12 5,21' fill='%23ffffff' /></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 4;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+  transition: transform 180ms ease, filter 180ms ease;
+  pointer-events: none;
+}
+
+.video-content > a:hover::before {
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow: 0 14px 40px rgba(2, 6, 23, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.video-content > a:hover::after {
+  transform: translate(-50%, -50%) scale(1.05);
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.55));
+}
+
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: translate(-120%, -50%) rotate(-20deg);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(20%, -50%) rotate(-20deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(120%, -50%) rotate(-20deg);
+  }
+}
+
+.video-content > a:hover::before {
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.12) 50%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(255, 255, 255, 0.1);
+  background-blend-mode: overlay;
+}
+
+.video-content a:hover .video-preview {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+}
+
+.video-content a .video-preview {
+  display: block;
+  filter: brightness(0.62) contrast(0.95) saturate(0.95);
+  transition: filter 240ms ease, transform 240ms ease;
+}
+
+.video-content a:hover .video-preview {
+  filter: brightness(0.86) contrast(1) saturate(1);
+}
+
+@media (max-width: 767px) {
+  .video .video-preview {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  .video-content a::after {
+    font-size: 2.4rem;
+  }
+}
+
+/*! Testimonials */
+.testimonials {
+  padding: 40px 0;
+  background: transparent;
+}
+
+.testimonials .testimonials-heading {
+  width: 700px;
+  margin-bottom: 40px;
+}
+
+.testimonials .testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonials .card p:nth-child(2) {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+/*! Pricing */
+.pricing .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  background: transparent;
+}
+
+.pricing .pricing-card-subheading {
+  margin-bottom: 30px;
+}
+
+.pricing .pricing-card-price {
+  margin-bottom: 30px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.pricing ul {
+  margin: 30px 0;
+}
+
+.pricing ul li {
+  margin-bottom: 20px;
+}
+
+.pricing ul li i {
+  margin-right: 10px;
+}
+
+.pricing .pricing-footer {
+  margin: 30px 0;
+}
+
+/*! FAQ */
+.faq {
+  padding: 40px 0;
+  background: transparent;
+}
+
+.faq .faq-group {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+.faq .faq-group .faq-group-header {
+  padding: 20px 0;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.faq .faq-group .faq-group-header h4 {
+  font-weight: 600;
+  width: 95%;
+}
+
+.faq .faq-group .faq-group-header i {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.faq .faq-group .faq-group-body {
+  display: none;
+}
+
+.faq .faq-group .faq-group-body.open {
+  display: block;
+}
+
+.faq ul.faq-menu {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ddd;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq ul.faq-menu li {
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.faq ul.faq-menu li.active {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/*! Footer */
+.footer {
+  padding: 40px 0;
+  background: transparent;
+}
+
+.footer h4 {
+  margin-bottom: 10px;
+}
+
+.footer ul li {
+  line-height: 2.5;
+}
+
+.footer a {
+  color: #ccc;
+}
+
+.footer i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .card {
+  margin: 20px 30px 30px 0;
+}
+
+.footer input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+/*! Utility Classes */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-sm {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*! Card */
+.card {
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/*! Buttons */
+.btn {
+  display: inline-block;
+  padding: 13px 20px;
+  background: var(--light-color);
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-dark {
+  background: var(--dark-color);
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/*! Text Classes */
+.text-xxl {
+  font-size: 3rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 40px 0 20px;
+}
+
+.text-xl {
+  font-size: 2.2rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 40px 0 20px;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 30px 0 20px;
+}
+
+.text-md {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 20px 0 10px;
+}
+
+.text-sm {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: normal;
+  margin: 10px 0 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*! Background */
+.bg-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.bg-light {
+  background: var(--light-color);
+  color: #333;
+}
+
+.bg-primary {
+  background: linear-gradient(
+    180deg,
+    rgba(72, 145, 255, 0.22),
+    rgba(72, 145, 255, 0.14)
+  );
+  color: #fff;
+}
+.bg-light {
+  background: rgba(244, 244, 246, 0.12);
+  color: #fff;
+}
+.bg-dark {
+  background: rgba(17, 17, 17, 0.48);
+  color: #fff;
+}
+.bg-black {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.card,
+.container-sm .card,
+.footer .card {
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.hamburger-button {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1005;
+}
+
+.hamburger-button .hamburger-line {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  margin: 6px 0;
+  border-radius: 2px;
+}
+
+/*! Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  z-index: 1004;
+  background: rgba(8, 10, 14, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.45);
+  transition: right 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu.active::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 250px;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1003;
+}
+
+body.no-scroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
+.mobile-menu ul {
+  margin-top: 100px;
+  padding-right: 10px;
+}
+
+.mobile-menu ul li {
+  margin: 10px 0;
+}
+
+.mobile-menu ul li a {
+  font-size: 20px;
+  transition: 0.3s;
+  color: #fff;
+}
+
+/*! Media Queries */
+@media (max-width: 960px) {
+  .text-xxl {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 670px) {
+  .navbar .main-menu {
+    display: none;
+  }
+
+  .navbar .hamburger-button {
+    display: block;
+  }
+
+  .hero .container {
+    background-image: linear-gradient(
+        rgba(6, 10, 20, 0.6),
+        rgba(6, 10, 20, 0.45)
+      ),
+      url("/assets/images/death-stranding-Lea.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    min-height: 56vh;
+    padding: 40px 15px;
+  }
+
+  .hero .hero-content,
+  .hero .hero-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero .hero-heading.text-xxl {
+    font-size: 1.6rem;
+    margin: 18px 0 10px;
+  }
+
+  .hero .hero-text {
+    font-size: 0.98rem;
+    margin-bottom: 16px;
+  }
+
+  .hero .hero-buttons .btn {
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+  }
+
+  .testimonials .testimonials-heading {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .testimonials .testimonials-grid,
+  .pricing .pricing-grid,
+  .footer .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .card {
+    margin-right: 0;
+  }
+
+  .footer .footer-grid > div {
+    text-align: center;
+  }
+
+  /*! Text */
+  .text-xl {
+    font-size: 1.9rem;
+  }
+
+  .text-lg {
+    font-size: 1.5rem;
+  }
+
+  .text-md {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .text-xxl {
+    font-size: 2rem;
+  }
+}
