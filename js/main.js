@@ -51,14 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburgerButton.setAttribute("aria-expanded", "true");
     mobileMenu.querySelector("a")?.focus();
     document.body.classList.add("no-scroll");
+    document.body.style.overflow = "hidden"; // مستقیم‌تر از class
   }
 
   function closeMenu() {
     mobileMenu.classList.remove("active");
     mobileMenu.setAttribute("aria-hidden", "true");
     hamburgerButton.setAttribute("aria-expanded", "false");
-    hamburgerButton.focus();
+    hamburgerButton.focus(); // فوکوس به همبرگر برمی‌گرده
     document.body.classList.remove("no-scroll");
+    document.body.style.overflow = ""; // ریست اسکرول
   }
 
   hamburgerButton.addEventListener("click", () => {

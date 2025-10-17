@@ -34,14 +34,11 @@
 
 body {
   font-family: "Lato-regular";
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   background-color: #071021;
   overflow-x: hidden;
-  background-image: linear-gradient(
-      rgba(6, 10, 20, 0.62),
-      rgba(6, 10, 20, 0.62)
-    ),
+  background-image: linear-gradient(rgba(6, 10, 20, 0.7), rgba(6, 10, 20, 0.7)),
     url("/assets/images/death-stranding-main-poster.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,7 +51,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(6, 10, 20, 0.35);
+  background: rgba(6, 10, 20, 0.85);
   pointer-events: none;
   z-index: 0;
 }
@@ -67,9 +64,16 @@ body::before {
   z-index: 2;
 }
 
+.logo {
+  width: 150px;
+  height: auto;
+}
+
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--light-color);
+  font-size: 1.1rem;
+  margin: 0 15px;
 }
 
 ul {
@@ -82,14 +86,14 @@ img {
 
 /*! Navbar */
 .navbar {
-  background: rgba(255, 255, 255, 0.06); /*  glass */
+  background: rgba(255, 255, 255, 0.12);
   padding: 14px 20px;
   position: sticky;
   top: 0;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1002;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skip-link {
@@ -100,7 +104,8 @@ img {
   height: 1px;
   overflow: hidden;
 }
-.skip-link:focus {
+
+/* .skip-link:focus {
   left: 10px;
   top: 10px;
   width: auto;
@@ -110,16 +115,16 @@ img {
   color: #fff;
   border-radius: 6px;
   z-index: 2000;
-}
+} */
 
 .logo-sticky {
   display: none;
 }
 
 .navbar.scrolled {
-  background: rgba(6, 10, 20, 0.6);
+  background: rgba(6, 10, 20, 0.8);
   border-bottom-color: rgba(255, 255, 255, 0.06);
-  box-shadow: 0 6px 24px rgba(2, 6, 23, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .hamburger-button:focus {
@@ -128,7 +133,9 @@ img {
 }
 
 .mobile-menu {
-  right: -300px;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
 }
 .mobile-menu.active {
   right: 0;
@@ -168,21 +175,23 @@ img {
 }
 
 .navbar ul li:last-child a {
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 /*! Hero */
 .hero {
+  height: 90vh;
+  margin-top: 80px;
   margin-bottom: 50px;
   position: relative;
 }
 
 .hero .container {
   position: relative;
-  min-height: 60vh;
+  min-height: 75vh;
   display: flex;
-  align-items: center;
-  padding: 60px 15px;
+  align-items: start;
+  padding: 10px 15px;
   background-image: linear-gradient(
       rgba(6, 10, 20, 0.55),
       rgba(6, 10, 20, 0.35)
@@ -191,7 +200,7 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  border-radius: 12px;
+  border-radius: 13px;
   overflow: hidden;
 }
 
@@ -243,26 +252,27 @@ img {
   }
 
   .text-xxl {
-    font-size: 1.5rem;
-    margin: 20px 0 12px;
+    font-size: 1rem;
+    margin: 10px 0 12px;
   }
 }
 
 /*! Video */
 .video {
-  padding: 10px 0 40px;
+  padding: 20px 0 40px;
 }
 
 .video .video-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .video .video-preview {
   margin-bottom: 20px;
   width: 100%;
-  max-width: 720px;
+  max-width: 920px;
   border-radius: 12px;
   display: block;
   position: relative;
@@ -391,7 +401,7 @@ img {
 .testimonials .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 40px;
 }
 
 .testimonials .card p:nth-child(2) {
@@ -403,7 +413,7 @@ img {
 .pricing .pricing-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 40px;
   margin-top: 50px;
   background: transparent;
 }
@@ -478,7 +488,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ddd;
+  background: var(--dark-color);
   padding: 10px 20px;
   border-radius: 10px;
   font-weight: 600;
@@ -527,6 +537,11 @@ img {
   align-items: center;
 }
 
+.footer-grid img {
+  width: 40%;
+  height: auto;
+}
+
 .footer .card {
   margin: 20px 30px 30px 0;
 }
@@ -541,7 +556,7 @@ img {
 
 /*! Utility Classes */
 .container {
-  max-width: 1100px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -554,10 +569,24 @@ img {
 
 /*! Card */
 .card {
-  background: #fff;
-  color: #000;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  color: #fff;
   border-radius: 10px;
   padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card p,
+.card h4 {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 /*! Buttons */
@@ -596,10 +625,10 @@ img {
 
 /*! Text Classes */
 .text-xxl {
-  font-size: 3rem;
+  font-size: 4rem;
   line-height: 1.2;
   font-weight: 600;
-  margin: 40px 0 20px;
+  margin: 40px 200px 20px 0;
 }
 
 .text-xl {
@@ -641,19 +670,6 @@ img {
 }
 
 .bg-light {
-  background: var(--light-color);
-  color: #333;
-}
-
-.bg-primary {
-  background: linear-gradient(
-    180deg,
-    rgba(72, 145, 255, 0.22),
-    rgba(72, 145, 255, 0.14)
-  );
-  color: #fff;
-}
-.bg-light {
   background: rgba(244, 244, 246, 0.12);
   color: #fff;
 }
@@ -664,14 +680,6 @@ img {
 .bg-black {
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
-}
-
-.card,
-.container-sm .card,
-.footer .card {
-  background: rgba(255, 255, 255, 0.04);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .hamburger-button {
@@ -695,12 +703,13 @@ img {
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -300px;
-  width: 250px;
+  right: -100%;
+  width: 80%;
+  max-width: 300px;
   height: 100%;
   z-index: 1004;
-  background: rgba(8, 10, 14, 0.6);
-  backdrop-filter: blur(6px);
+  background: rgba(8, 10, 14, 0.9);
+  backdrop-filter: blur(10px); 
   box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.45);
   transition: right 0.3s ease-in-out;
 }
@@ -715,8 +724,8 @@ img {
   left: 0;
   top: 0;
   bottom: 0;
-  right: 250px;
-  background: rgba(0, 0, 0, 0.45);
+  right: 80%;
+  background: rgba(0, 0, 0, 0.7);
   z-index: 1003;
 }
 
@@ -741,13 +750,28 @@ body.no-scroll {
 }
 
 /*! Media Queries */
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
+  .hero .hero-content {
+    width: 80%;
+  }
+  .testimonials-grid,
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
   .text-xxl {
     font-size: 2.5rem;
   }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 767px) {
+  body {
+    background-attachment: scroll;
+  }
+  .navbar,
+  .card {
+    backdrop-filter: blur(5px);
+  }
   .navbar .main-menu {
     display: none;
   }
@@ -781,8 +805,9 @@ body.no-scroll {
   }
 
   .hero .hero-text {
-    font-size: 0.98rem;
-    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
   }
 
   .hero .hero-buttons .btn {
@@ -800,6 +825,7 @@ body.no-scroll {
   .pricing .pricing-grid,
   .footer .footer-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .footer .card {
@@ -808,6 +834,19 @@ body.no-scroll {
 
   .footer .footer-grid > div {
     text-align: center;
+  }
+
+  .container,
+  .container-sm {
+    padding: 0 10px;
+  }
+  .hero .container {
+    padding: 30px 10px;
+    min-height: 50vh;
+  }
+  .faq ul.faq-menu {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   /*! Text */
@@ -827,5 +866,15 @@ body.no-scroll {
 @media (max-width: 500px) {
   .text-xxl {
     font-size: 2rem;
+  }
+  .btn {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-xxl {
+    font-size: 1.8rem;
   }
 }
