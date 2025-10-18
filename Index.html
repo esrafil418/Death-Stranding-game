@@ -4,31 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="icon"
+      href="/assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
       integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="/assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png" />
-    <title>Landing page</title>
+    <link rel="stylesheet" href="style.css" />
+    <title>DS</title>
   </head>
   <body>
+    <!-- ! navabar  -->
     <nav class="navbar">
-      <div class="container">
-        <div class="logo">
+      <div class="navbar__container">
+        <div class="navbar__container--logo">
           <a href="index.html">
             <img
               src="/assets/logo/red-death-stranding-high-resolution-logo-transparent.png"
               alt="Death Stranding Logo"
               class="logo-default"
-              loading="lazy"
-            />
-            <img
-              src="/assets/logo/red-death-stranding-high-resolution-logo-transparent.png"
-              alt="Death Stranding Logo"
-              class="logo-sticky"
               loading="lazy"
             />
           </a>
@@ -50,39 +48,14 @@
             </li>
           </ul>
         </div>
-        <!-- Hamburger Button -->
-        <!-- <button
-          class="hamburger-button"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
-          <div class="hamburger-line"></div>
-        </button> -->
-        <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
-          <ul>
-            <li>
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Blog</a>
-            </li>
-            <li>
-              <a class="btn" href="#"> <i class="fas fa-user"></i> Log In </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
-    <!-- Hero -->
+
+    <!-- ! Hero  -->
     <section class="hero">
-      <div class="container">
+      <div class="hero__container">
         <div class="hero-content">
-          <h1 class="hero-heading text-xxl">DEATH STRANDING 2: ON THE BEACH</h1>
+          <h1 class="hero-heading">DEATH STRANDING 2: ON THE BEACH</h1>
           <p class="hero-text">
             Embark on an inspiring mission of human connection beyond the UCA.
             Sam with companions by his side sets out on a new journey to save
@@ -92,18 +65,19 @@
             changes the world once again.
           </p>
           <div class="hero-buttons">
-            <a href="#" class="btn btn-primary">Get More Info</a>
-            <a href="#" class="btn"
+            <a href="#" class="hero-btn btn-primary">Get More Info</a>
+            <a href="#" class="hero-btn"
               ><i class="fas fa-laptop"></i> Play Trailer
             </a>
           </div>
         </div>
       </div>
     </section>
-    <!-- Video Section -->
-    <section class="video bg-black">
-      <div class="container-sm">
-        <h2 class="video-heading text-xl text-center">
+
+    <!-- Video  -->
+    <section class="video">
+      <div class="video__container">
+        <h2 class="video-heading">
           From legendary game creator Hideo Kojima comes a genre-defying
           experience
         </h2>
@@ -119,15 +93,16 @@
         </div>
       </div>
     </section>
-    <!-- Testimonials -->
-    <section class="testimonials bg-dark">
-      <div class="container">
-        <h3 class="testimonials-heading text-xl">
+
+    <!-- Testimonials  -->
+    <section class="testimonials">
+      <div class="testimonials__container">
+        <h3 class="testimonials-heading">
           As Sam Bridges, your mission is to deliver hope to humanity by
           connecting the last survivors of a decimated America.
         </h3>
         <div class="testimonials-grid">
-          <div class="card">
+          <div class="testimonials__card">
             <p>
               “one of the best open world games, and the best game I've played
               on PS5. the story and the gameplay are both perfect with a massive
@@ -140,7 +115,7 @@
             <p>YSGR35</p>
           </div>
 
-          <div class="card">
+          <div class="testimonials__card">
             <p>
               “Death Stranding 2: On The Beach is an unforgettable adventure
               that I firmly believe sits as one of the greatest games ever
@@ -153,7 +128,7 @@
             <p>Final Weapon</p>
           </div>
 
-          <div class="card">
+          <div class="testimonials__card">
             <p>
               “Death Stranding 2: On The Beach is a triumph in what it sets out
               to achieve. This isn't a game interested in converting willing
@@ -171,22 +146,22 @@
 
     <!-- Pricing -->
     <section class="pricing">
-      <div class="container-sm">
-        <h3 class="pricing-heading text-xl text-center">Pricing</h3>
-        <p class="pricing-subheading text-md text-center">
+      <div class="pricing__container">
+        <h3 class="pricing__container--header">Pricing</h3>
+        <p class="pricing-subheading">
           Can you reunite the shattered world, one step at a time?
         </p>
         <div class="pricing-grid">
           <!-- Pricing Card 1 -->
-          <div class="card bg-light">
+          <div class="pricing-card">
             <div class="pricing-card-header">
-              <h4 class="pricing-heading text-xl">Deluxe Edition</h4>
+              <h4 class="pricing-card-heading ">Deluxe Edition</h4>
               <p class="pricing-card-subheading">
                 PS5 game streaming supported only with PlayStation Plus Premium
                 subscription
               </p>
               <p class="pricing-card-price">
-                <span class="text-xl">$59.99</span>
+                <span class="price">$59.99</span>
               </p>
             </div>
             <div class="pricing-card-body">
@@ -205,20 +180,22 @@
                   patches.
                 </li>
               </ul>
-              <a href="#" class="btn btn-primary btn-block">Get Started</a>
+              <a href="#" class="pricing-card__btn"
+                >Get Started</a
+              >
             </div>
           </div>
 
           <!-- Pricing Card 2 -->
-          <div class="card bg-black">
+          <div class="pricing-card expensive">
             <div class="pricing-card-header">
-              <h4 class="pricing-card-heading text-xl">Premium</h4>
+              <h4 class="pricing-card-heading">Premium</h4>
               <p class="pricing-card-subheading">
                 PS5 game streaming supported only with PlayStation Plus Premium
                 subscription
               </p>
               <p class="pricing-card-price">
-                <span class="text-xl">$229</span>
+                <span class="price">$229</span>
               </p>
             </div>
             <div class="pricing-card-body">
@@ -230,11 +207,13 @@
                 <li><i class="fas fa-check"></i>Art cards</li>
                 <li><i class="fas fa-check"></i>Letter from Hideo Kojima</li>
               </ul>
-              <a href="#" class="btn btn-primary btn-block">Get Started</a>
+              <a href="#" class="pricing-card__btn"
+                >Get Started</a
+              >
             </div>
           </div>
         </div>
-        <p class="pricing-footer text-center">
+        <p class="pricing-footer">
           ©2021 Sony Interactive Entertainment Inc. DEATH STRANDING is a
           trademark of Sony Interactive Entertainment LLC. Created and developed
           by KOJIMA PRODUCTIONS.
@@ -244,8 +223,8 @@
 
     <!-- FAQ -->
     <section class="faq bg-light">
-      <div class="container-sm">
-        <h3 class="text-xl text-center">Frequently Asked Questions</h3>
+      <div class="faq__container">
+        <h3 class="faq__header--section">Frequently Asked Questions</h3>
         <ul class="faq-menu">
           <li class="active">All</li>
           <li>Getting Started</li>
@@ -254,7 +233,7 @@
         <div class="faq-content">
           <div class="faq-group">
             <div class="faq-group-header">
-              <h4 class="text-md">
+              <h4 class="faq-question">
                 Can I see the trophy display and the white Ludens hallway when I
                 visit the office?
               </h4>
@@ -272,7 +251,7 @@
 
           <div class="faq-group">
             <div class="faq-group-header">
-              <h4 class="text-md">
+              <h4 class="faq-question">
                 Do you accept pitches for new ideas and game concepts?
               </h4>
               <i class="fas fa-plus"></i>
@@ -288,7 +267,7 @@
 
           <div class="faq-group">
             <div class="faq-group-header">
-              <h4 class="text-md">
+              <h4 class="faq-question">
                 Can I receive a signature from Hideo Kojima and / or other
                 Kojima Productions staff?
               </h4>
@@ -305,7 +284,7 @@
 
           <div class="faq-group">
             <div class="faq-group-header">
-              <h4 class="text-md">
+              <h4 class="faq-question">
                 Where can I send presents and letters to KOJIMA PRODUCTIONS?
               </h4>
               <i class="fas fa-plus"></i>
@@ -322,7 +301,7 @@
 
           <div class="faq-group">
             <div class="faq-group-header">
-              <h4 class="text-md">
+              <h4 class="faq-question">
                 Where can I purchase KOJIMA PRODUCTIONS merchandise?
               </h4>
               <i class="fas fa-plus"></i>
@@ -339,7 +318,7 @@
 
           <div class="faq-group">
             <div class="faq-group-header">
-              <h4 class="text-md">Is there an intern program?</h4>
+              <h4 class="faq-question">Is there an intern program?</h4>
               <i class="fas fa-plus"></i>
             </div>
             <div class="faq-group-body">
@@ -356,9 +335,9 @@
 
     <!-- Footer -->
     <footer class="footer bg-black">
-      <div class="container">
+      <div class="footer__container">
         <div class="footer-grid">
-          <div>
+          <div class="footer__contact">
             <a href="index.html">
               <img
                 src="/assets/logo/death-stranding-high-resolution-logo-grayscale-transparent.png"
@@ -366,14 +345,13 @@
                 loading="lazy"
               />
             </a>
-            <div class="card">
-              <h4>Subscribe to Newsletter</h4>
-              <form>
-                <input type="email" id="email" placeholder="Enter your email" />
-                <button type="submit" class="btn btn-primary btn-block">
-                  Subscribe
-                </button>
-              </form>
+            <div class="footer__contact">
+              <h4>Contact:</h4>
+              <ul>
+                <li>
+                  <a href="#">contact@kojimaproductions.jp</a>
+                </li>
+              </ul>
             </div>
           </div>
           <div>
@@ -392,21 +370,18 @@
               <li><a href="#">Recent Projects</a></li>
             </ul>
           </div>
-          <div>
-            <h4>Contact</h4>
-            <ul>
-              <li>
-                <a href="#">contact@kojimaproductions.jp</a>
-              </li>
-            </ul>
+          <div class="footer__card">
+            <h4>Subscribe to Newsletter</h4>
+            <form>
+              <input type="email" id="email" placeholder="Enter your email" />
+              <button type="submit" class="footer__btn">Subscribe</button>
+            </form>
           </div>
         </div>
       </div>
-      <p class="text-center text-sm">
-        © 2024 KOJIMA PRODUCTIONS. All rights reserved.
-      </p>
+      <div class="footer__copyright">
+        <p>© 2024 KOJIMA PRODUCTIONS. All rights reserved.</p>
+      </div>
     </footer>
-
-    <script src="js/main.js"></script>
   </body>
 </html>
