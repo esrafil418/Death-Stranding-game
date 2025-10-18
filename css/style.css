@@ -743,11 +743,182 @@ img {
   justify-content: center;
 }
 
-.footer__contact img {
+/* .footer__contact img {
   width: 60%;
   margin-bottom: 30px;
-}
+} */
 
 .footer__contact {
   margin-bottom: 14px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  /* Navbar */
+  .navbar .navbar__container {
+    justify-content: space-between;
+  }
+
+  .navbar .main-menu ul {
+    display: none;
+  }
+
+  .navbar ul li:last-child a {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  /* Hero Section */
+  .hero {
+    margin-top: 40px;
+    height: auto;
+  }
+
+  .hero .hero__container {
+    max-width: 90%;
+    min-height: auto;
+    padding: 20px;
+    background-image: linear-gradient(
+        rgba(6, 10, 20, 0.55),
+        rgba(6, 10, 20, 0.35)
+      ),
+      url("/assets/images/death-stranding-Lea.jpg");
+    height: 500px;
+  }
+
+  .hero-heading {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+
+  .hero-content {
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 50%;
+  }
+
+  .hero-text {
+    width: 100%;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 5px;
+  }
+
+  .hero-btn {
+    width: 30%;
+    margin: 1px 4px;
+    display: inline;
+    padding: 8px 12px;
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
+
+  /* Video Section */
+  .video__container {
+    max-width: 90%;
+    margin: 30px auto;
+  }
+
+  .video-heading {
+    font-size: 1.3rem;
+  }
+
+  /* Testimonials */
+  .testimonials__container {
+    max-width: 90%;
+  }
+
+  .testimonials-heading {
+    width: 100%;
+    font-size: 1.3rem;
+  }
+
+  .testimonials .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Pricing */
+  .pricing .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing__container {
+    max-width: 90%;
+  }
+
+  .pricing__container--header {
+    font-size: 2rem;
+  }
+
+  .pricing .pricing-subheading {
+    font-size: 1rem;
+  }
+
+  /* FAQ */
+  .faq__container {
+    max-width: 90%;
+  }
+
+  .faq__header--section {
+    font-size: 1.5rem;
+  }
+
+  .faq ul.faq-menu {
+    gap: 10px;
+    font-size: 0.8rem;
+  }
+
+  /* Footer */
+  .footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+
+  .footer__contact {
+    width: 100%;
+  }
+
+  /* .footer__contact img {
+    width: fit-content;
+  } */
+
+  .footer__card {
+    width: 100%;
+  }
+}
+
+/* Small phone screens */
+@media screen and (max-width: 480px) {
+  .hero-heading {
+    font-size: 1rem;
+  }
+
+  .hero-content {
+    font-size: 0.9rem;
+    width: 100%;
+    margin-top: 45%;
+  }
+
+  .hero-btn {
+    padding: 4px 7px;
+  }
+
+  .video-heading,
+  .testimonials-heading,
+  .pricing__container--header {
+    font-size: 1.5rem;
+  }
+
+  .navbar__container--logo img {
+    width: 120px;
+  }
+
+  .footer h4 {
+    font-size: 1rem;
+  }
 }
