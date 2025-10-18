@@ -1,7 +1,7 @@
 #
 
 ![Hero Header](assets/images/for%20github.png)
-![Live:](https://death-stranding-game.netlify.app/)
+[🚀 Live](https://death-stranding-game.netlify.app/)
 
 # Death Stranding — Landing Page (Prototype)
 
